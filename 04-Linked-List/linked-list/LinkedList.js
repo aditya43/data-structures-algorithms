@@ -45,6 +45,22 @@ class LinkedList {
 
         return current;
     }
+
+    print () {
+        if (this.size() === 0) {
+            return 'Linked list is empty';
+        }
+
+        let current = this.head;
+        let str = '';
+
+        while (current.next) {
+            str += current.value + ' -> ';
+            current = current.next;
+        }
+
+        return str;
+    }
 }
 
 module.exports = new LinkedList();
