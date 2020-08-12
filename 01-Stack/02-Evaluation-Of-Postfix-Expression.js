@@ -1,4 +1,4 @@
-const Stack = require('./stack/stack');
+const Stack = require('./stack/Stack');
 
 // Performs Postfix Evaluation on a given exp
 function postFixEvaluation (exp) {

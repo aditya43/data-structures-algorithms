@@ -1,4 +1,4 @@
-const Stack = require('./stack/stack');
+const Stack = require('./stack/Stack');
 
 Stack.push(2);
 Stack.push(5);
