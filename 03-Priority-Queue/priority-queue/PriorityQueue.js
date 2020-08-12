@@ -36,6 +36,16 @@ class PriorityQueue {
 
         return this.items.shift();
     }
+
+    // front function
+    getLowestPriorityItem () {
+    // returns the highest priority element in the Priority queue without removing it.
+        if (this.isEmpty()) {
+            return 'No elements in Queue';
+        }
+
+        return this.items[0];
+    }
 }
 
 module.exports = new PriorityQueue();
