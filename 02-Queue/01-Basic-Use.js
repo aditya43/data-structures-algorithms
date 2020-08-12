@@ -1,5 +1,5 @@
 // creating object for queue class
-const Queue = require('./queue/queue');
+const Queue = require('./queue/Queue');
 
 // Testing dequeue and pop on an empty queue
 // returns Underflow

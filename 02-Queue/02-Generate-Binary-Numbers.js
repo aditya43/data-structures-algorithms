@@ -1,4 +1,4 @@
-var Queue = require('./queue/queue');
+var Queue = require('./queue/Queue');
 
 // function to generate binary numbers
 function generatePrintBinary (n) {
