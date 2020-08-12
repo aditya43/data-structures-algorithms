@@ -8,6 +8,11 @@ class Queue {
     enqueue (item) {
         this.items.push(item);
     }
+
+    // Check if queue is empty.
+    isEmpty () {
+        return this.items.length === 0;
+    }
 }
 
 module.exports = new Queue();
