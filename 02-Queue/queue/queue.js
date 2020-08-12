@@ -18,6 +18,15 @@ class Queue {
         return this.items.shift();
     }
 
+    // Return an element from front of queue without removing it.
+    front () {
+        if (this.isEmpty()) {
+            return 'No elements in queue';
+        }
+
+        return this.items[0];
+    }
+
     // Check if queue is empty.
     isEmpty () {
         return this.items.length === 0;
