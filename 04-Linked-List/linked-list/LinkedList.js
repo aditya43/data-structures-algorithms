@@ -31,6 +31,20 @@ class LinkedList {
     getFirst () {
         return this.head;
     }
+
+    getLast () {
+        if (this.size() === 0) {
+            return 'Linked list is empty';
+        }
+
+        let current = this.head;
+
+        while (current.next) {
+            current = current.next;
+        }
+
+        return current;
+    }
 }
 
 module.exports = new LinkedList();
