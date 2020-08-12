@@ -12,7 +12,7 @@ class Stack {
     // Return top most element from the stack.
     pop () {
         if (this.items.length == 0) {
-            return 'Underflow - stack is empty';
+            return 'Underflow';
         }
 
         return this.items.pop();
