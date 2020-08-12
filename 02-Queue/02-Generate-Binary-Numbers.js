@@ -1,4 +1,3 @@
-// Create an empty queue of strings
 var Queue = require('./queue/queue');
 
 // function to generate binary numbers
