@@ -24,7 +24,7 @@ class LinkedList {
         this.size++;
     }
 
-    size () {
+    getSize () {
         return this.size;
     }
 
@@ -33,7 +33,7 @@ class LinkedList {
     }
 
     getLast () {
-        if (this.size() === 0) {
+        if (this.getSize() === 0) {
             return 'Linked list is empty';
         }
 
@@ -47,15 +47,20 @@ class LinkedList {
     }
 
     print () {
-        if (this.size() === 0) {
+        if (this.getSize() === 0) {
             return 'Linked list is empty';
         }
 
         let current = this.head;
         let str = '';
 
-        while (current.next) {
-            str += current.value + ' -> ';
+        while (current) {
+            str += current.value;
+
+            if (current.next) {
+                str += ' -> ';
+            }
+
             current = current.next;
         }
 
