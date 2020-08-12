@@ -31,6 +31,19 @@ class Queue {
     isEmpty () {
         return this.items.length === 0;
     }
+
+    // Return concatenated string of all elements from queue.
+    print () {
+        let str = '';
+
+        if (!this.isEmpty()) {
+            for (let i = 0; i < this.items.length; i++) {
+                str += this.items[0] + ' ';
+            }
+        }
+
+        return str;
+    }
 }
 
 module.exports = new Queue();
