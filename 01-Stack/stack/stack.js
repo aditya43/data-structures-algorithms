@@ -11,7 +11,7 @@ class Stack {
 
     // Return top most element from the stack.
     pop () {
-        if (this.items.length == 0) {
+        if (this.isEmpty()) {
             return 'Underflow';
         }
 
