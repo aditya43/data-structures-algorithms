@@ -62,6 +62,17 @@ class PriorityQueue {
     // return true if the queue is empty.
         return this.items.length == 0;
     }
+
+    // print function prints all the element of the queue
+    print () {
+        let str = '';
+
+        for (let i = 0; i < this.items.length; i++) {
+            str += this.items[i].element + ' ';
+        }
+
+        return str;
+    }
 }
 
 module.exports = new PriorityQueue();
