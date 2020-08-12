@@ -23,6 +23,10 @@ class LinkedList {
 
         this.size++;
     }
+
+    size () {
+        return this.size;
+    }
 }
 
 module.exports = new LinkedList();
