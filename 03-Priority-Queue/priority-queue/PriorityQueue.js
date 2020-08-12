@@ -68,7 +68,7 @@ class PriorityQueue {
         let str = '';
 
         for (let i = 0; i < this.items.length; i++) {
-            str += this.items[i].element + ' ';
+            str += this.items[i].item + ' ';
         }
 
         return str;
