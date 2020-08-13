@@ -8,6 +8,8 @@
  * Time Complexity: O(n)
  * Pattern used: Frequency counter.
  *
+ * @author Aditya Hajare <https://github.com/aditya43>
+ *
  * @param str1 String 1
  * @param str2 String 2
  */
