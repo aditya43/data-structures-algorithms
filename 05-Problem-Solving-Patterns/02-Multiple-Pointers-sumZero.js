@@ -7,6 +7,8 @@
  * Space Complexity: O(1)
  * Pattern used: Multiple Pointers.
  *
+ * @author Aditya Hajare <https://github.com/aditya43>
+ *
  * @param arr Sorted array of integers
  */
 
