@@ -17,11 +17,6 @@ function sumZero (arr) {
 
     // Iterate until both pointers overlap
     while (left < right) {
-        if (left === right) {
-            // Both pointers overlap, break!
-            break;
-        }
-
         const sum = arr[left] + arr[right];
 
         if (sum === 0) {
