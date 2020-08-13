@@ -5,6 +5,9 @@
  * An anagram is a word, phrase or name formed by rearranging the letters
  * of another, such as "cinema", formed from "iceman".
  *
+ * Time Complexity: O(n)
+ * Pattern used: Frequency counter.
+ *
  * @param str1 String 1
  * @param str2 String 2
  */
