@@ -7,6 +7,41 @@
  * Space Complexity: O(1)
  * Pattern used: Multiple Pointers.
  *
- * @param str1 String 1
- * @param str2 String 2
+ * @param arr Sorted array of integers
  */
+
+function sumZero (arr) {
+    let left = 0; // First pointer
+    let right = arr.length - 1; // Second pointer
+    const pairs = []; // Result
+
+    // Iterate until both pointers overlap
+    while (left < right) {
+        if (left === right) {
+            // Both pointers overlap, break!
+            break;
+        }
+
+        const sum = arr[left] + arr[right];
+
+        if (sum === 0) {
+            // Store both numbers as pair.
+            pairs.push([arr[left], arr[right]]);
+            left++; // Move on to the next number from left.
+        }
+
+        // Move on to the next number from left.
+        if (sum < 0) {
+            left++;
+        }
+
+        // Move on to the next number from right.
+        if (sum > 0) {
+            right--;
+        }
+    }
+
+    return pairs;
+}
+
+console.log(sumZero([-3, -2, -1, 0, 2, 3]));
