@@ -22,3 +22,23 @@ Data structures and algorithms using JavaScript
 ## Logarithmic Time/Space Complexity
 - The logarithm of a number roughly measures the `number of times we can divide that number by 2` **`before we get a value that is less than or equals to 1`**.
 - `Recursion` sometimes involve logarithmic `Space Complexity`.
+
+-----------
+
+## Famous Problem Solving Patterns:
+- Frequency Counter.
+- Multiple Pointers.
+- Sliding Window.
+- Divide And Conquer.
+- Dynamic Programming.
+- Greedy Algorithms.
+- Backtracking.
+- Recursion.
+- Brute Force.
+- Branch & Bound.
+- Linear Programming.
+- Integer Programming.
+- Neural Networks.
+- Genetic Algorithms.
+- Simulated Annealing.
+- Memoization
