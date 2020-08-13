@@ -50,3 +50,9 @@ Data structures and algorithms using JavaScript
 - This can often avoid the need for nested loop or `O(n^2)` operations with arrays/strings.
 
 -----------
+
+## Multiple Pointers
+- Creating `pointers` or values that corresponds to an index or position and move towards the beginning, end or middle based on a certain condition.
+- Very efficient for solving problems with minimal space complexity as well.
+
+-----------
