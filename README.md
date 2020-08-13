@@ -42,3 +42,11 @@ Data structures and algorithms using JavaScript
 - Genetic Algorithms.
 - Simulated Annealing.
 - Memoization
+
+-----------
+
+## Frequency Counter
+- This pattern uses objects or sets to collect values/frequencies of values.
+- This can often avoid the need for nested loop or `O(n^2)` operations with arrays/strings.
+
+-----------
