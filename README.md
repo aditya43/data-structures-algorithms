@@ -76,3 +76,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Divide And Conquer
 - This pattern involves dividing a data set into smaller chunks and then repeating a process with subset of data.
 - This pattern can tremendously decrease `time complexity`.
+
+-----------
+
+## Pure Recursion Tips
+- For arrays, use methods like `slice`, `spread operator` and `concat` that makes copies of arrays so we don't end up mutating them.
+- **`Strings are immutable!`**. So we will need to use methods like `slice`, `substr` or `substring` to make copies of string.
+- To make copies of objects, use `Object.assign`, or the `spread operator`.
