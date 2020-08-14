@@ -69,4 +69,4 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Sliding Window
 - This pattern involves creating a `window` which can either be an array or number from one position to another.
 - Depending on certain condition, the `window` either increases or closes (and a new `window` is created).
-- Very useful for keeping track of a subset of a data in an array/string etc.
+- Very useful for keeping track of a subset (data that is continuous in some way) of a data in an array/string etc.
