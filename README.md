@@ -70,3 +70,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - This pattern involves creating a `window` which can either be an array or number from one position to another.
 - Depending on certain condition, the `window` either increases or closes (and a new `window` is created).
 - Very useful for keeping track of a subset (data that is continuous in some way) of a data in an array/string etc.
+
+-----------
+
+## Divide And Conquer
+- This pattern involves dividing a data set into smaller chunks and then repeating a process with subset of data.
+- This pattern can tremendously decrease `time complexity`.
