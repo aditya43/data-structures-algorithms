@@ -46,6 +46,7 @@ function optimizedBubbleSort (arr) {
                 noSwaps = false;
             }
         }
+        // If no number was swapped that means array is sorted now, break the loop.
         if (noSwaps) {
             break;
         }
