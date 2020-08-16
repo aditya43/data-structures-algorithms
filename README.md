@@ -127,3 +127,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
     }
     ```
+    * `digitCount(num)`: Returns the number of digits in num.
+    ```js
+    function digitCount(num) {
+        if (num === 0) {
+            return 1;
+        }
+        return Math.floor(Math.log10(Math.abs(num))) + 1;
+    }
+    ```
