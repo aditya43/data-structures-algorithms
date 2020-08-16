@@ -105,3 +105,9 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It's a combination of 2 things - Merging and Sorting.
 - Exploits the fact that arrays of 0 or 1 element are always sorted.
 - Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
+
+-----------
+
+## Quick Sort
+- Like merge sort, exploits the fact that arrays of 0 or 1 elements are always sorted.
+- Works by selecting 1 element (called `pivot`) and finding the index where pivot should end up in the sorted array.
