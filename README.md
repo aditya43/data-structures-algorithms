@@ -83,3 +83,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - For arrays, use methods like `slice`, `spread operator` and `concat` that makes copies of arrays so we don't end up mutating them.
 - **`Strings are immutable!`**. So we will need to use methods like `slice`, `substr` or `substring` to make copies of string.
 - To make copies of objects, use `Object.assign`, or the `spread operator`.
+
+-----------
+
+## Bubble Sort
+- In this algorithm, the largest values bubble up to the top.
