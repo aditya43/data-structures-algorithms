@@ -111,3 +111,12 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Quick Sort
 - Like merge sort, exploits the fact that arrays of 0 or 1 elements are always sorted.
 - Works by selecting 1 element (called `pivot`) and finding the index where pivot should end up in the sorted array.
+
+-----------
+
+## Radix Sort
+- It works on list of numbers.
+- It never makes comparison between elements.
+- It exploits the fact that information about the size of a number is encoded in the number of digits.
+- **More digits means a bigger number!**
+- We can use it for any kind of data (e.g. strings) as long as we can convert and represent it in binary digits.
