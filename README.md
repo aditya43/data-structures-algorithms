@@ -136,3 +136,13 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         return Math.floor(Math.log10(Math.abs(num))) + 1;
     }
     ```
+    * `mostDigits(arr)`: Given an array of numbers, returns the number of digits in the larest numbers in list (using `digitCount(num)` above).
+    ```js
+    function mostDigits(arr) {
+        let maxDigits = 0;
+        for (let i = 0; i < arr.length; i++) {
+            maxDigits = Math.max(maxDigits, digitCount(arr[i]))
+        }
+        return maxDigits;
+    }
+    ```
