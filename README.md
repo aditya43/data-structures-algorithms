@@ -120,3 +120,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It exploits the fact that information about the size of a number is encoded in the number of digits.
 - **More digits means a bigger number!**
 - We can use it for any kind of data (e.g. strings) as long as we can convert and represent it in digits.
+- In order to implement Radix Sort, it's helpful to build a few helper functions first:
+    * `getDigit(num, place)`: Returns the digit in num at the given place value.
+    ```js
+    function getDigit(num, i) {
+        return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+    }
+    ```
