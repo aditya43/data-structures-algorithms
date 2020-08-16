@@ -98,3 +98,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ## Insertion Sort
 - Builds up the sort by gradually creating a larger left half which is always sorted.
+
+-----------
+
+## Merge Sort
+- It's a combination of 2 things - Merging and Sorting.
+- Exploits the fact that arrays of 0 or 1 element are always sorted.
+- Works by decomposing an array into smaller arrays of 0 or 1 elements, then building up a newly sorted array.
