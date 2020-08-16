@@ -93,3 +93,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ## Selection Sort
 - Similar to bubble sort, but instead of first placing large values at sorted position, it places small values into sorted position.
+
+-----------
+
+## Insertion Sort
+- Builds up the sort by gradually creating a larger left half which is always sorted.
