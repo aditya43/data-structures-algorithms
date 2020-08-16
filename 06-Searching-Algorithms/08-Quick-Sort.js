@@ -29,7 +29,7 @@ function pivot (arr, start = 0, end = arr.length - 1) {
 }
 
 function quickSort (arr, left = 0, right = arr.length - 1) {
-    if (left < right) {
+    if (left < right) { // Base case
         const pivotIndex = pivot(arr, left, right); // 3
         // left
         quickSort(arr, left, pivotIndex - 1);
