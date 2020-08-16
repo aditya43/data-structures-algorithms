@@ -119,4 +119,4 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - It never makes comparison between elements.
 - It exploits the fact that information about the size of a number is encoded in the number of digits.
 - **More digits means a bigger number!**
-- We can use it for any kind of data (e.g. strings) as long as we can convert and represent it in binary digits.
+- We can use it for any kind of data (e.g. strings) as long as we can convert and represent it in digits.
