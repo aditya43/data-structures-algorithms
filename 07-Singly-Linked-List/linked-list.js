@@ -14,7 +14,7 @@ class SinglyLinkedList {
 
     push (val) {
         if (val.length < 1) {
-            throw new Error('Empty value passed to push function');
+            return false;
         }
 
         const node = new Node(val);
@@ -32,7 +32,7 @@ class SinglyLinkedList {
 
     pop () {
         if (!this.head) {
-            throw new Error('List is empty');
+            return false;
         }
 
         let current = this.head;
@@ -56,7 +56,7 @@ class SinglyLinkedList {
 
     shift () {
         if (!this.head) {
-            throw new Error('List is empty');
+            return false;
         }
 
         const current = this.head;
@@ -86,7 +86,7 @@ class SinglyLinkedList {
 
     get (index) {
         if (this.length === 0 || index > this.length) {
-            throw new Error('List is empty or invalid index');
+            return false;
         }
 
         let count = 0;
@@ -100,21 +100,14 @@ class SinglyLinkedList {
     }
 
     set (index, val) {
-        if (this.length === 0 || index > this.length) {
-            throw new Error('List is empty or invalid index');
+        const node = this.get(index);
+
+        if (node) {
+            node.val = val;
+            return true;
         }
 
-        let count = 0;
-        let current = this.head;
-
-        while (count !== index) {
-            count++;
-            current = current.next;
-        }
-
-        current.val = val;
-
-        return current;
+        return false;
     }
 }
 
