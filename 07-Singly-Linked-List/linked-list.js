@@ -155,7 +155,7 @@ class SinglyLinkedList {
         return removed;
     }
 
-    reverse (prev = null) {
+    reverseRecursive (prev = null) {
         if (this.head.next) {
             const current = this.head;
             this.head = this.head.next;
@@ -163,6 +163,23 @@ class SinglyLinkedList {
             return this.reverse(current);
         }
         this.head.next = prev;
+        return this;
+    }
+
+    reverseIterative () {
+        let node = this.head;
+        let prev = null;
+
+        [this.head] = [this.tail];
+
+        for (let i = 0; i < this.length; i++) {
+            const next = node.next;
+
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+
         return this;
     }
 
@@ -205,9 +222,13 @@ list.push('Avi');
 // remove
 // console.log(list.remove(2));
 
-// reverse
+// reverse recursive
+// list.print();
+// list.reverseRecursive();
+
+// reverse iterative
 list.print();
-list.reverse();
+list.reverseIterative();
 
 // pop
 // console.log(list.pop());
