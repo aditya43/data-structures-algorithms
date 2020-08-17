@@ -56,9 +56,18 @@ class SinglyLinkedList {
 }
 
 const list = new SinglyLinkedList();
+
+// push
 list.push('Aditya');
 list.push('Nishi');
 list.push('John');
 list.push('Jane');
 list.push('Avi');
+
+// pop
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
+console.log(list.pop());
 console.log(list);
