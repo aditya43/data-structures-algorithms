@@ -53,6 +53,22 @@ class SinglyLinkedList {
 
         return current;
     }
+
+    shift () {
+        if (!this.head) {
+            throw new Error('List is empty');
+        }
+
+        const current = this.head;
+        this.head = this.head.next;
+        this.length--;
+
+        if (this.length === 0) {
+            this.tail = null;
+        }
+
+        return current;
+    }
 }
 
 const list = new SinglyLinkedList();
@@ -65,9 +81,16 @@ list.push('Jane');
 list.push('Avi');
 
 // pop
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+
+// shift
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
+console.log(list.shift());
 console.log(list);
