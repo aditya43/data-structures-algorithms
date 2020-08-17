@@ -154,6 +154,17 @@ class SinglyLinkedList {
 
         return removed;
     }
+
+    reverse (prev = null) {
+        if (this.head.next) {
+            const current = this.head;
+            this.head = this.head.next;
+            current.next = prev;
+            return this.reverse(current);
+        }
+        this.head.next = prev;
+        return this;
+    }
 }
 
 const list = new SinglyLinkedList();
@@ -182,7 +193,10 @@ list.push('Avi');
 // console.log(list.insert(2, 'AAAAA'));
 
 // remove
-console.log(list.remove(2));
+// console.log(list.remove(2));
+
+// reverse
+list.reverse();
 
 // pop
 // console.log(list.pop());
