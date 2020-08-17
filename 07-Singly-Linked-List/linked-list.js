@@ -132,6 +132,28 @@ class SinglyLinkedList {
 
         return true;
     }
+
+    remove (index) {
+        if (index < 0 || index > this.length) {
+            return false;
+        }
+
+        if (index === 0) {
+            return this.shift();
+        }
+
+        if (index === this.length - 1) {
+            return this.pop();
+        }
+
+        const prev = this.get(index - 1);
+        const removed = prev.next;
+        prev.next = removed.next;
+
+        this.length--;
+
+        return removed;
+    }
 }
 
 const list = new SinglyLinkedList();
@@ -157,7 +179,10 @@ list.push('Avi');
 // console.log(list.set(2, 'AAAAAA'));
 
 // insert
-console.log(list.insert(2, 'AAAAA'));
+// console.log(list.insert(2, 'AAAAA'));
+
+// remove
+console.log(list.remove(2));
 
 // pop
 // console.log(list.pop());
