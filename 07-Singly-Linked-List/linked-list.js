@@ -165,6 +165,16 @@ class SinglyLinkedList {
         this.head.next = prev;
         return this;
     }
+
+    print () {
+        var arr = [];
+        var current = this.head;
+        while (current) {
+            arr.push(current.val);
+            current = current.next;
+        }
+        console.log(arr);
+    }
 }
 
 const list = new SinglyLinkedList();
@@ -196,6 +206,7 @@ list.push('Avi');
 // console.log(list.remove(2));
 
 // reverse
+list.print();
 list.reverse();
 
 // pop
@@ -211,4 +222,5 @@ list.reverse();
 // console.log(list.shift());
 // console.log(list.shift());
 // console.log(list.shift());
-console.log(JSON.stringify(list, 1));
+// console.log(JSON.stringify(list, 1));
+list.print();
