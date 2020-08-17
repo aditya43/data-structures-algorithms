@@ -109,6 +109,29 @@ class SinglyLinkedList {
 
         return false;
     }
+
+    insert (index, val) {
+        if (index < 0 || index > this.length) {
+            return false;
+        }
+
+        if (index === this.length) {
+            return this.push(val);
+        }
+
+        if (index === 0) {
+            return this.unshift(val);
+        }
+
+        const node = new Node(val);
+        const prev = this.get(index - 1);
+
+        node.next = prev.next;
+        prev.next = node;
+        this.length++;
+
+        return true;
+    }
 }
 
 const list = new SinglyLinkedList();
@@ -132,6 +155,9 @@ list.push('Avi');
 
 // set
 // console.log(list.set(2, 'AAAAAA'));
+
+// insert
+console.log(list.insert(2, 'AAAAA'));
 
 // pop
 // console.log(list.pop());
