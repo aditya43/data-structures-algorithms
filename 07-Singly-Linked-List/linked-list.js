@@ -76,7 +76,7 @@ class SinglyLinkedList {
         if (!this.head) {
             this.head = this.tail = node;
         } else {
-            node.next = this.head.next;
+            node.next = this.head;
             this.head = node;
         }
 
