@@ -83,23 +83,41 @@ class SinglyLinkedList {
         this.length++;
         return this.head;
     }
+
+    get (index) {
+        if (this.length === 0 || index > this.length) {
+            throw new Error('List is empty or invalid index');
+        }
+
+        let count = 0;
+        let current = this.head;
+        while (count !== index) {
+            count++;
+            current = current.next;
+        }
+
+        return current;
+    }
 }
 
 const list = new SinglyLinkedList();
 
 // push
-// list.push('Aditya');
-// list.push('Nishi');
-// list.push('John');
-// list.push('Jane');
-// list.push('Avi');
+list.push('Aditya');
+list.push('Nishi');
+list.push('John');
+list.push('Jane');
+list.push('Avi');
 
 // unshift
-list.unshift('Aditya');
-list.unshift('Nishi');
-list.unshift('John');
-list.unshift('Jane');
-list.unshift('Avi');
+// list.unshift('Aditya');
+// list.unshift('Nishi');
+// list.unshift('John');
+// list.unshift('Jane');
+// list.unshift('Avi');
+
+// get
+console.log(list.get(3));
 
 // pop
 // console.log(list.pop());
