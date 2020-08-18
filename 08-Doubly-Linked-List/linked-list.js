@@ -70,6 +70,24 @@ class DoublyLinkedList {
         return node;
     }
 
+    unshift (val) {
+        const node = new Node(val);
+
+        if (this.length === 0) {
+            this.head = this.tail = node;
+        }
+
+        if (this.length > 0) {
+            this.head.prev = node;
+            node.next = this.head;
+            this.head = node;
+        }
+
+        this.length++;
+
+        return this.head;
+    }
+
     print () {
         const arr = [];
         let current = this.head;
@@ -101,8 +119,12 @@ list.push('Ninth');
 // console.log(list.pop());
 
 // shift
-console.log(list.shift());
-console.log(list.shift());
+// console.log(list.shift());
+// console.log(list.shift());
+
+// unshift
+list.unshift('AAAAA');
+list.unshift('BBBBB');
 
 // print
 list.print();
