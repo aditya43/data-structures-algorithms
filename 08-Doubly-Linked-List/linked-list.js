@@ -116,6 +116,17 @@ class DoublyLinkedList {
         return current;
     }
 
+    set (index, val) {
+        const node = this.get(index);
+
+        if (node) {
+            node.val = val;
+            return true;
+        }
+
+        return false;
+    }
+
     print () {
         const arr = [];
         let current = this.head;
@@ -155,9 +166,13 @@ list.push('Ninth');
 // list.unshift('BBBBB');
 
 // get
-console.log(list.get(1).val);
-console.log(list.get(2).val);
-console.log(list.get(8).val);
+// console.log(list.get(1).val);
+// console.log(list.get(2).val);
+// console.log(list.get(8).val);
+
+// set
+console.log(list.set(1, 'QQQQQQ').val);
+console.log(list.set(2, 'QQQQQQ').val);
 
 // print
 list.print();
