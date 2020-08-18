@@ -183,6 +183,43 @@ class SinglyLinkedList {
         return this;
     }
 
+    reverseBetween (start, end) {
+        if (start < 0 || end > this.length) {
+            return false;
+        }
+
+        const stack = [];
+
+        let node = this.head;
+        let prev = null;
+        let next = null;
+
+        for (let i = 0; i <= end; i++) {
+            if (i >= start && i <= end) {
+                stack.push(node);
+            }
+
+            if (i === start - 1) {
+                prev = node;
+            }
+
+            if (i === end) {
+                next = node.next;
+            }
+            node = node.next;
+        }
+
+        while (stack.length) {
+            prev.next = stack.pop();
+
+            if (stack.length === 0) {
+                prev.next.next = next;
+            } else {
+                prev = prev.next;
+            }
+        }
+    }
+
     print () {
         var arr = [];
         var current = this.head;
@@ -197,11 +234,15 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 
 // push
-list.push('Aditya');
-list.push('Nishi');
-list.push('John');
-list.push('Jane');
-list.push('Avi');
+list.push('First');
+list.push('Second');
+list.push('Third');
+list.push('Fourth');
+list.push('Fifth');
+list.push('Sixth');
+list.push('Seventh');
+list.push('Eighth');
+list.push('Ninth');
 
 // unshift
 // list.unshift('Aditya');
@@ -227,8 +268,8 @@ list.push('Avi');
 // list.reverseRecursive();
 
 // reverse iterative
-list.print();
-list.reverseIterative();
+// list.print();
+// list.reverseIterative();
 
 // pop
 // console.log(list.pop());
@@ -244,4 +285,5 @@ list.reverseIterative();
 // console.log(list.shift());
 // console.log(list.shift());
 // console.log(JSON.stringify(list, 1));
+list.reverseBetween(1, 4);
 list.print();
