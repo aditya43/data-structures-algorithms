@@ -26,6 +26,32 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+
+    print () {
+        const arr = [];
+        let current = this.head;
+
+        while (current) {
+            arr.push(current.val);
+            current = current.next;
+        }
+
+        console.log(arr);
+    }
 }
 
 const list = new DoublyLinkedList();
+
+// push
+list.push('First');
+list.push('Second');
+list.push('Third');
+list.push('Fourth');
+list.push('Fifth');
+list.push('Sixth');
+list.push('Seventh');
+list.push('Eighth');
+list.push('Ninth');
+
+// print
+list.print();
