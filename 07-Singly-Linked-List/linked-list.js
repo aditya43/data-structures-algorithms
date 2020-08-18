@@ -160,7 +160,7 @@ class SinglyLinkedList {
             const current = this.head;
             this.head = this.head.next;
             current.next = prev;
-            return this.reverse(current);
+            return this.reverseRecursive(current);
         }
         this.head.next = prev;
         return this;
@@ -284,5 +284,5 @@ list.push('Ninth');
 // console.log(list.shift());
 // console.log(list.shift());
 // console.log(JSON.stringify(list, 1));
-list.reverseBetween(1, 4);
+// list.reverseBetween(1, 4);
 list.print();
