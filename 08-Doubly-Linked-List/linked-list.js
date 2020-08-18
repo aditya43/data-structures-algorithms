@@ -88,6 +88,34 @@ class DoublyLinkedList {
         return this.head;
     }
 
+    get (index) {
+        if (index < 0 || index > this.length || this.length === 0) {
+            return false;
+        }
+
+        let current = null;
+
+        if (index <= this.length / 2) {
+            let count = 0;
+            current = this.head;
+
+            while (count !== index) {
+                current = current.next;
+                count++;
+            }
+        } else {
+            let count = this.length - 1;
+            current = this.tail;
+
+            while (count !== index) {
+                current = current.prev;
+                count--;
+            }
+        }
+
+        return current;
+    }
+
     print () {
         const arr = [];
         let current = this.head;
@@ -123,8 +151,13 @@ list.push('Ninth');
 // console.log(list.shift());
 
 // unshift
-list.unshift('AAAAA');
-list.unshift('BBBBB');
+// list.unshift('AAAAA');
+// list.unshift('BBBBB');
+
+// get
+console.log(list.get(1).val);
+console.log(list.get(2).val);
+console.log(list.get(8).val);
 
 // print
 list.print();
