@@ -27,6 +27,11 @@ class DoublyLinkedList {
         return this;
     }
 
+    pop () {
+        // tail = tail.prev
+        // length--
+    }
+
     print () {
         const arr = [];
         let current = this.head;
