@@ -127,6 +127,32 @@ class DoublyLinkedList {
         return false;
     }
 
+    insert (index, val) {
+        if (index < 0 || index > this.length) {
+            return false;
+        }
+
+        if (index === 0) {
+            return this.unshift(val);
+        }
+
+        if (index === this.length) {
+            return this.push(val);
+        }
+
+        const node = new Node(val);
+        const prevNode = this.get(index - 1);
+
+        node.next = prevNode.next;
+        node.prev = prevNode;
+        prevNode.next.prev = node;
+        prevNode.next = node;
+
+        this.length++;
+
+        return true;
+    }
+
     print () {
         const arr = [];
         let current = this.head;
@@ -171,8 +197,12 @@ list.push('Ninth');
 // console.log(list.get(8).val);
 
 // set
-console.log(list.set(1, 'QQQQQQ').val);
-console.log(list.set(2, 'QQQQQQ').val);
+// console.log(list.set(1, 'QQQQQQ').val);
+// console.log(list.set(2, 'QQQQQQ').val);
+
+// insert
+list.set(2, 'QQQQQQ');
+list.set(7, 'ZZZZZZ');
 
 // print
 list.print();
