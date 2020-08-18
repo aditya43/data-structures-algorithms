@@ -211,11 +211,10 @@ class SinglyLinkedList {
 
         while (stack.length) {
             prev.next = stack.pop();
+            prev = prev.next;
 
             if (stack.length === 0) {
-                prev.next.next = next;
-            } else {
-                prev = prev.next;
+                prev.next = next;
             }
         }
     }
