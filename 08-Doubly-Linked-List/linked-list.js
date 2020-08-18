@@ -28,8 +28,24 @@ class DoublyLinkedList {
     }
 
     pop () {
-        // tail = tail.prev
-        // length--
+        if (this.head === null) {
+            return false;
+        }
+
+        const node = this.tail;
+
+        if (this.length === 1) {
+            this.head = this.tail = null;
+            this.length--;
+            return node;
+        }
+
+        this.tail = this.tail.prev;
+        this.tail.next = null;
+        node.prev = null;
+        this.length--;
+
+        return node;
     }
 
     print () {
@@ -57,6 +73,10 @@ list.push('Sixth');
 list.push('Seventh');
 list.push('Eighth');
 list.push('Ninth');
+
+// pop
+// console.log(list.pop());
+// console.log(list.pop());
 
 // print
 list.print();
