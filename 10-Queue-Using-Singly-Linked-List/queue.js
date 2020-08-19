@@ -24,6 +24,24 @@ class Queue {
         return ++this.size;
     }
 
+    dequeue () {
+        if (this.size === 0) {
+            return -1;
+        }
+
+        const node = this.head;
+
+        if (this.size === 1) {
+            this.head = this.tail = null;
+        } else {
+            this.head = node.next;
+        }
+
+        this.size--;
+
+        return node;
+    }
+
     print () {
         const arr = [];
 
@@ -53,3 +71,18 @@ console.log(queue.enqueue('Ninth'));
 
 // print
 queue.print();
+
+// dequeue
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
+console.log(queue.dequeue());
