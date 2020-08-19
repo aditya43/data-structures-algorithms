@@ -23,10 +23,24 @@ class Queue {
 
         return ++this.size;
     }
+
+    print () {
+        const arr = [];
+
+        let node = this.head;
+
+        while (node) {
+            arr.push(node.val);
+            node = node.next;
+        }
+
+        console.log(arr);
+    }
 }
 
 const queue = new Queue();
 
+// push
 console.log(queue.enqueue('First'));
 console.log(queue.enqueue('Second'));
 console.log(queue.enqueue('Third'));
@@ -36,3 +50,6 @@ console.log(queue.enqueue('Sixth'));
 console.log(queue.enqueue('Seventh'));
 console.log(queue.enqueue('Eighth'));
 console.log(queue.enqueue('Ninth'));
+
+// print
+queue.print();
