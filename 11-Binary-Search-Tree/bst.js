@@ -10,56 +10,54 @@ class BinarySearchTree {
         this.root = null;
     }
 
-    insert (val) {
-        if (this.root === null) {
-            this.root = new Node(val);
-        } else {
-            this.insertRecursive(val, this.root);
-        }
-
-        return this;
-    }
-
-    insertRecursive (val, current) {
-        if (val === current.val) {
-            // Duplicate! BST can't have duplicate values
-            return -1;
-        }
-
-        if (val < current.val) {
-            if (current.left === null) {
-                current.left = new Node(val);
-            }
-            this.insertRecursive(val, current.left);
-        } else {
-            if (current.right === null) {
-                current.right = new Node(val);
-            }
-            this.insertRecursive(val, current.right);
-        }
-    }
-
-    search (val) {
+    insert (val, node = this.root) {
         if (!this.root) {
+            this.root = new Node(val);
+            return this;
+        }
+
+        if (val === node.val) {
             return -1;
         }
 
-        return this.findRecursive(val, this.root) || -1;
+        if (val < node.val) {
+            if (!node.left) {
+                node.left = new Node(val);
+                return this;
+            }
+
+            return this.insert(val, node.left);
+        } else {
+            if (!node.right) {
+                node.right = new Node(val);
+                return this;
+            }
+
+            return this.insert(val, node.right);
+        }
     }
 
-    findRecursive (val, current) {
-        if (current.val === val) {
-            return true;
+    find (val, node = this.root) {
+        if (!node) {
+            return -1;
         }
-        if (val < current.val) {
-            if (current.left) {
-                return this.findRecursive(val, current.left);
+
+        if (node) {
+            if (val === node.val) {
+                return true;
             }
-        } else {
-            if (current.right) {
-                return this.findRecursive(val, current.right);
+            if (val < node.val) {
+                if (node.left) {
+                    return this.find(val, node.left);
+                }
+            } else {
+                if (node.right) {
+                    return this.find(val, node.right);
+                }
             }
         }
+
+        return -1;
     }
 }
 
@@ -71,9 +69,11 @@ bst.insert(5);
 bst.insert(8);
 bst.insert(1);
 
-console.log(bst.search(3));
-console.log(bst.search(2));
-console.log(bst.search(5));
-console.log(bst.search(8));
-console.log(bst.search(1));
-console.log(bst.search(99));
+console.log(bst.find(3));
+console.log(bst.find(2));
+console.log(bst.find(5));
+console.log(bst.find(8));
+console.log(bst.find(1));
+console.log(bst.find(99));
+
+console.log(JSON.stringify(bst, 1));
