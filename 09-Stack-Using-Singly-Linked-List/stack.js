@@ -26,11 +26,11 @@ class Stack {
     }
 
     pop () {
-        const node = this.first;
-
         if (this.size === 0) {
             return null;
         }
+
+        const node = this.first;
 
         if (this.size === 1) {
             this.first = this.last = null;
