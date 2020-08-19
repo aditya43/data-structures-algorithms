@@ -153,6 +153,48 @@ class DoublyLinkedList {
         return true;
     }
 
+    remove (index) {
+        if (this.length === 0 || index < 0 || index > this.length) {
+            return false;
+        }
+
+        if (index === 0) {
+            return this.shift();
+        }
+
+        if (index === this.length - 1) {
+            return this.pop();
+        }
+
+        let node = null;
+
+        if (index <= this.length / 2) {
+            let count = 0;
+            node = this.head;
+
+            while (count !== index) {
+                node = node.next;
+                count++;
+            }
+        } else {
+            let count = this.length - 1;
+            node = this.tail;
+
+            while (count !== index) {
+                node = node.prev;
+                count--;
+            }
+        }
+
+        node.prev.next = node.next;
+        node.next.prev = node.prev;
+
+        this.length--;
+        node.prev = node.next = null;
+
+        return node;
+    }
+
     print () {
         const arr = [];
         let current = this.head;
@@ -201,8 +243,13 @@ list.push('Ninth');
 // console.log(list.set(2, 'QQQQQQ').val);
 
 // insert
-list.set(2, 'QQQQQQ');
-list.set(7, 'ZZZZZZ');
+// list.set(2, 'QQQQQQ');
+// list.set(7, 'ZZZZZZ');
+
+// remove
+// list.print();
+// list.remove(2);
+// list.remove(7);
 
 // print
 list.print();
