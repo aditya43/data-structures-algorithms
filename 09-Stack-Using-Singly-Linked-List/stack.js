@@ -24,6 +24,29 @@ class Stack {
 
         return ++this.size;
     }
+
+    pop () {
+        const node = this.first;
+
+        if (this.size === 1) {
+            this.first = this.last = null;
+        } else {
+            this.first = this.first.next;
+        }
+
+        this.size--;
+        return node;
+    }
 }
 
 const stack = new Stack();
+
+stack.push('First');
+stack.push('Second');
+stack.push('Third');
+stack.push('Fourth');
+stack.push('Fifth');
+stack.push('Sixth');
+stack.push('Seventh');
+stack.push('Eighth');
+stack.push('Ninth');
