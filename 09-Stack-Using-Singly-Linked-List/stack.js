@@ -28,6 +28,10 @@ class Stack {
     pop () {
         const node = this.first;
 
+        if (this.size === 0) {
+            return null;
+        }
+
         if (this.size === 1) {
             this.first = this.last = null;
         } else {
@@ -36,6 +40,18 @@ class Stack {
 
         this.size--;
         return node;
+    }
+
+    print () {
+        const arr = [];
+        let node = this.first;
+
+        while (node) {
+            arr.push(node.val);
+            node = node.next;
+        }
+
+        console.log(arr);
     }
 }
 
@@ -50,3 +66,6 @@ stack.push('Sixth');
 stack.push('Seventh');
 stack.push('Eighth');
 stack.push('Ninth');
+
+stack.print();
+console.log(JSON.stringify(stack, 1));
