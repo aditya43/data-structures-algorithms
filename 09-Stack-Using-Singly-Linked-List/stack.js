@@ -18,7 +18,7 @@ class Stack {
         if (this.size === 0) {
             this.first = this.last = node;
         } else {
-            node.next = this.first.next;
+            node.next = this.first;
             this.first = node;
         }
 
@@ -57,15 +57,20 @@ class Stack {
 
 const stack = new Stack();
 
-stack.push('First');
-stack.push('Second');
-stack.push('Third');
-stack.push('Fourth');
-stack.push('Fifth');
-stack.push('Sixth');
-stack.push('Seventh');
-stack.push('Eighth');
-stack.push('Ninth');
+// push
+console.log(stack.push('First'));
+console.log(stack.push('Second'));
+console.log(stack.push('Third'));
+console.log(stack.push('Fourth'));
+console.log(stack.push('Fifth'));
+console.log(stack.push('Sixth'));
+console.log(stack.push('Seventh'));
+console.log(stack.push('Eighth'));
+console.log(stack.push('Ninth'));
 
+// print
 stack.print();
-console.log(JSON.stringify(stack, 1));
+
+// pop
+console.log(stack.pop());
+console.log(stack.pop());
