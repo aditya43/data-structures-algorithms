@@ -146,3 +146,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         return maxDigits;
     }
     ```
+
+-----------
+
+## DFS PreOrder Psudo
+- Visit the node.
+- Traverse left.
+- Traverse right.
