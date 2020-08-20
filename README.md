@@ -153,3 +153,10 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Visit the node.
 - Traverse left.
 - Traverse right.
+
+-----------
+
+## DFS PostOrder Psudo
+- Traverse left.
+- Traverse right.
+- Visit the node.
