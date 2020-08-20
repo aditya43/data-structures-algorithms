@@ -162,3 +162,11 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Traverse right.
 - Visit the node.
 - **NOTE: Root is the last thing visited in PostOrder traversal.**
+
+-----------
+
+## DFS InOrder Psudo
+- Traverse left.
+- Visit the node.
+- Traverse right.
+- **NOTE: In order traversal gives us sorted data.**
