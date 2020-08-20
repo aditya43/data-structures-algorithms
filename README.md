@@ -170,3 +170,15 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Visit the node.
 - Traverse right.
 - **NOTE: In order traversal gives us sorted data.**
+
+-----------
+
+## Traversal Algorithms Usage
+- **BFS:**
+    * Good for traversing tree that is big in height (deep).
+- **DFS InOrder:**
+    * Mostly used on BST.
+    * Gives data in sorted order.
+- **DFS PreOrder:**
+    * Mostly used on BST.
+    * Gives data in sorted order.
