@@ -46,13 +46,19 @@ class MaxBinaryHeap {
         const length = this.values.length;
 
         // if left child is greater than parent
-        if (left <= length && this.values[left] > this.values[largest]) {
-            largest = left;
+        if (left <= length && this.values[left]) {
+            if (this.values[left] > this.values[largest]) {
+                largest = left;
+            }
         }
+
         // if right child is greater than parent
-        if (right <= length && this.values[right] > this.values[largest]) {
-            largest = right;
+        if (right <= length && this.values[right]) {
+            if (this.values[right] > this.values[largest]) {
+                largest = right;
+            }
         }
+
         // swap
         if (largest !== index) {
             [this.values[largest], this.values[index]] = [this.values[index], this.values[largest]];
