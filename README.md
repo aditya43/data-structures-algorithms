@@ -180,5 +180,6 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * Mostly used on BST.
     * Gives data in sorted order.
 - **DFS PreOrder:**
-    * Mostly used on BST.
-    * Gives data in sorted order.
+    * Can be used to `export` a tree structure so that it is easily reconstructed or copied.
+    * We know `root` is at the beginning.
+
