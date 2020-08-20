@@ -37,7 +37,25 @@ class BinarySearchTree {
         }
     }
 
-    depthFirstSearchPostOrder () {}
+    depthFirstSearchPostOrder () {
+        const output = [];
+
+        function traverse (node) {
+            if (node.left) {
+                traverse(node.left);
+            }
+
+            if (node.right) {
+                traverse(node.right);
+            }
+
+            output.push(node.val);
+        }
+
+        traverse(this.root);
+
+        return output;
+    }
 }
 
 const bst = new BinarySearchTree();
@@ -54,4 +72,4 @@ bst.insert(8);
 bst.insert(20);
 // console.log(JSON.stringify(bst, 1));
 
-// console.log(bst.depthFirstSearchPostOrder());
+console.log(bst.depthFirstSearchPostOrder());
