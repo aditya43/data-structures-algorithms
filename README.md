@@ -184,10 +184,17 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * We know `root` is at the beginning.
 - **When to use BFS vs. DFS:**
     * That heavily depends on the structure of the search tree and the number and location of solutions (aka searched-for items).
-        - If you know a solution is not far from the root of the tree, a breadth first search (BFS) might be better.
+        - If we know a solution is not far from the root of the tree, a breadth first search (BFS) might be better.
         - If the tree is very deep and solutions are rare, depth first search (DFS) might take an extremely long time, but BFS could be faster.
         - If the tree is very wide, a BFS might need too much memory, so it might be completely impractical.
         - If solutions are frequent but located deep in the tree, BFS could be impractical.
-        - If the search tree is very deep you will need to restrict the search depth for depth first search (DFS), anyway (for example with iterative deepening).
-    * But these are just rules of thumb; you'll probably need to experiment.
+        - If the search tree is very deep we will need to restrict the search depth for depth first search (DFS), anyway (for example with iterative deepening).
+        - Breadth-first search is less space-efficient than depth-first search because BFS keeps a priority queue of the entire frontier while DFS maintains a few pointers at each level.
+        - If it is known that an answer will likely be found far into a tree, DFS is a better option than BFS. BFS is good to use when the depth of the tree can vary or if a single answer is needed—for example, the shortest path in a tree. If the entire tree should be traversed, DFS is a better option.
+        - BFS always returns an optimal answer, but this is not guaranteed for DFS.
+        - Depth-first search is used in topological sorting, scheduling problems, cycle detection in graphs, and solving puzzles with only one solution, such as a maze or a sudoku puzzle.
+        - Other applications involve analyzing networks, for example, testing if a graph is bipartite. Depth-first search is often used as a subroutine in network flow algorithms such as the Ford-Fulkerson algorithm.
+        - DFS is also used as a subroutine in matching algorithms in graph theory such as the Hopcroft–Karp algorithm.
+        - Depth-first searches are used in mapping routes, scheduling, and finding spanning trees.
+    * But these are just rules of thumb; we'll probably need to experiment.
 
