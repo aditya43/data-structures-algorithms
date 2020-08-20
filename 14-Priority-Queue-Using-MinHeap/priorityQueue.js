@@ -10,13 +10,14 @@ class PriorityQueue {
         this.values = [];
     }
 
-    insert (val) {
-        this.values.push(val);
+    enqueue (val, priority) {
+        const node = new Node(val, priority);
+        this.values.push(node);
         this.bubbleUp();
     }
 
-    extractMax () {
-        const max = this.values[0];
+    dequeue () {
+        const min = this.values[0];
         const end = this.values.pop();
 
         if (this.values.length > 0) {
@@ -24,7 +25,7 @@ class PriorityQueue {
             this.bubbleDown(0);
         }
 
-        return max;
+        return min;
     }
 
     bubbleUp () {
@@ -33,7 +34,7 @@ class PriorityQueue {
         while (idx > 0) {
             const parentIdx = Math.floor((idx - 1) / 2);
 
-            if (this.values[idx] <= this.values[parentIdx]) {
+            if (this.values[idx].priority >= this.values[parentIdx].priority) {
                 break;
             }
 
@@ -47,19 +48,26 @@ class PriorityQueue {
 
     // Recursive
     bubbleDown (index) {
+        const length = this.values.length;
+        let largest = index;
+
         const left = 2 * index + 1;
         const right = 2 * index + 2;
-        let largest = index;
-        const length = this.values.length;
 
         // if left child is greater than parent
-        if (left <= length && this.values[left] > this.values[largest]) {
-            largest = left;
+        if (left <= length && this.values[left]) {
+            if (this.values[left].priority < this.values[largest].priority) {
+                largest = left;
+            }
         }
+
         // if right child is greater than parent
-        if (right <= length && this.values[right] > this.values[largest]) {
-            largest = right;
+        if (right <= length && this.values[right]) {
+            if (this.values[right].priority < this.values[largest].priority) {
+                largest = right;
+            }
         }
+
         // swap
         if (largest !== index) {
             [this.values[largest], this.values[index]] = [this.values[index], this.values[largest]];
@@ -68,7 +76,7 @@ class PriorityQueue {
     }
 
     // Iterative
-    sinkDown () {
+    bubbleDownIterative () {
         let idx = 0;
         const length = this.values.length;
         const element = this.values[0];
@@ -80,15 +88,15 @@ class PriorityQueue {
 
             if (leftChildIdx < length) {
                 leftChild = this.values[leftChildIdx];
-                if (leftChild.priority < element.priority) {
+                if (leftChild.priority > element.priority) {
                     swap = leftChildIdx;
                 }
             }
             if (rightChildIdx < length) {
                 rightChild = this.values[rightChildIdx];
                 if (
-                    (swap === null && rightChild.priority < element.priority) ||
-                    (swap !== null && rightChild.priority < leftChild.priority)
+                    (swap === null && rightChild.priority > element.priority) ||
+                    (swap !== null && rightChild.priority > leftChild.priority)
                 ) {
                     swap = rightChildIdx;
                 }
@@ -101,4 +109,17 @@ class PriorityQueue {
     }
 }
 
-const pQueue = new PriorityQueue();
+const ER = new PriorityQueue();
+ER.enqueue('common cold', 5);
+ER.enqueue('gunshot wound', 1);
+ER.enqueue('high fever', 4);
+ER.enqueue('broken arm', 2);
+ER.enqueue('glass in foot', 3);
+
+console.log(ER.dequeue());
+console.log(ER.dequeue());
+console.log(ER.dequeue());
+console.log(ER.dequeue());
+console.log(ER.dequeue());
+console.log(ER.dequeue());
+console.log(ER.dequeue());
