@@ -153,6 +153,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Visit the node.
 - Traverse left.
 - Traverse right.
+- **NOTE: Root is the first thing visited in PreOrder traversal.**
 
 -----------
 
@@ -160,3 +161,4 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - Traverse left.
 - Traverse right.
 - Visit the node.
+- **NOTE: Root is the last thing visited in PostOrder traversal.**
