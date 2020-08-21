@@ -21,6 +21,18 @@ class HashTable {
         }
         this.keyMap[index].push([key, value]);
     }
+
+    get (key) {
+        const index = this._hash(key);
+        if (this.keyMap[index]) {
+            for (let i = 0; i < this.keyMap[index].length; i++) {
+                if (this.keyMap[index][i][0] === key) {
+                    return this.keyMap[index][i][1];
+                }
+            }
+        }
+        return undefined;
+    }
 }
 
 const ht = new HashTable(17);
