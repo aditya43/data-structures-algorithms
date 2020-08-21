@@ -10,15 +10,20 @@ class Graph {
     }
 
     addEdge (vertex1, vertex2) {
-        if (this.adjacencyList[vertex1].indexOf(vertex2) < 0) {
-            this.adjacencyList[vertex1].push(vertex2);
+        const v1 = this.adjacencyList[vertex1];
+        const v2 = this.adjacencyList[vertex2];
+
+        if (v1.indexOf(vertex2) < 0) {
+            v1.push(vertex2);
         }
-        if (this.adjacencyList[vertex2].indexOf(vertex1) < 0) {
-            this.adjacencyList[vertex2].push(vertex1);
+        if (v2.indexOf(vertex1) < 0) {
+            v2.push(vertex1);
         }
     }
 
     removeEdge (vertex1, vertex2) {
+        // console.log(vertex1, vertex2);
+
         const v1 = this.adjacencyList[vertex1];
         const v2 = this.adjacencyList[vertex2];
 
@@ -27,6 +32,15 @@ class Graph {
         }
         if (v2.indexOf(vertex1) >= 0) {
             v2.splice(v2.indexOf(vertex1), 1);
+        }
+    }
+
+    removeVertex (vertex) {
+        if (this.adjacencyList[vertex]) {
+            while (this.adjacencyList[vertex].length) {
+                this.removeEdge(this.adjacencyList[vertex].pop(), vertex);
+            }
+            delete this.adjacencyList[vertex];
         }
     }
 }
@@ -45,8 +59,13 @@ graph.addEdge('Pune', 'Mumbai');
 graph.addEdge('Mumbai', 'Delhi');
 graph.addEdge('Mumbai', 'Goa');
 
-console.log(graph);
-graph.removeEdge('Mumbai', 'Goa');
-graph.removeEdge('Pune', 'Goa');
+// Remove edge
+// console.log(graph);
+// graph.removeEdge('Mumbai', 'Goa');
+// graph.removeEdge('Pune', 'Goa');
+
+// Remove vertex
+// console.log(graph);
+graph.removeVertex('Pune');
 
 console.log(graph);
