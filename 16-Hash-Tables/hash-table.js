@@ -33,6 +33,20 @@ class HashTable {
         }
         return undefined;
     }
+
+    keys () {
+        const keysArr = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if (this.keyMap[i]) {
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    if (!keysArr.includes(this.keyMap[i][j][0])) {
+                        keysArr.push(this.keyMap[i][j][0]);
+                    }
+                }
+            }
+        }
+        return keysArr;
+    }
 }
 
 const ht = new HashTable(17);
