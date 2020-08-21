@@ -1,5 +1,5 @@
 ## Data Structures And Algorithms
-Data structures and algorithms using JavaScript
+:hotsprings: Data structures, algorithms and problem solving patterns using JavaScript.
 
 ## Author
 Aditya Hajare ([Linkedin](https://in.linkedin.com/in/aditya-hajare)).
