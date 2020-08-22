@@ -6,6 +6,35 @@
  *
  * @author Aditya Hajare <https://github.com/aditya43>
  *
+ * IMPORTANT POINTS AND PSUDOCODE
+ * -----------------------------------
+ * Radix sort is a special sorting algorithm that works on lists of numbers
+ * It never makes comparisons between elements!
+ * It exploits the fact that information about the size of a number is
+ * encoded in the number of digits.
+ * More digits means a bigger number!
+ *
+ * Following Helpers Are Needed For Radix Sort:
+ * -----------------------------------
+ * getDigit(num, place) - returns the digit in num at the given place value
+ *
+ * digitCount(num) - returns the number of digits in num
+ *
+ * mostDigits(nums) - Given an array of numbers, returns the number of
+ * digits in the largest numbers in the list
+ *
+ * RADIX SORT PSEUDOCODE
+ * -----------------------------------
+ * 1. Define a function that accepts list of numbers
+ * 2. Figure out how many digits the largest number has
+ * 3. Loop from k = 0 up to this largest number of digits
+ * 4. For each iteration of the loop:
+ *  - Create buckets for each digit (0 to 9)
+ *  - place each number in the corresponding bucket based on its kth digit
+ * 5. Replace our existing array with values in our buckets, starting
+ * with 0 and going up to 9
+ * 6. return list at the end!
+ *
  * @param arr Array of integers
  */
 
