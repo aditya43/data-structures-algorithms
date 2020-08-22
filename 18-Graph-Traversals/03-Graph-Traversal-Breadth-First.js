@@ -22,7 +22,27 @@ class Graph {
     }
 
     breadthFirstIterative (start) {
+        const results = [];
+        const visited = {};
+        const queue = [start];
+        let currentVertex;
 
+        visited[start] = true;
+
+        while (queue.length) {
+            currentVertex = queue.shift();
+
+            results.push(currentVertex);
+
+            this.adjacencyList[currentVertex].forEach(neighbour => {
+                if (!visited[neighbour]) {
+                    visited[neighbour] = true;
+                    queue.push(neighbour);
+                }
+            });
+        }
+
+        return results;
     }
 }
 
