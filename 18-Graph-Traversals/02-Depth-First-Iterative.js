@@ -43,29 +43,6 @@ class Graph {
 
         return results;
     }
-
-    depthFirstRecursive (start) {
-        const results = [];
-        const visited = {};
-        const adjacencyList = this.adjacencyList;
-
-        (function dfs (vertex) {
-            if (!vertex) {
-                return null;
-            }
-
-            visited[vertex] = true;
-            results.push(vertex);
-
-            adjacencyList[vertex].forEach(neighbour => {
-                if (!visited[neighbour]) {
-                    return dfs(neighbour);
-                }
-            });
-        })(start);
-
-        return results;
-    }
 }
 
 const graph = new Graph();
