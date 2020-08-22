@@ -5,6 +5,24 @@ class Node {
     }
 }
 
+class PriorityQueue {
+    constructor () {
+        this.values = [];
+    }
+
+    enqueue (val) {
+
+    }
+
+    dequeue () {
+
+    }
+
+    sort () {
+
+    }
+}
+
 class WeightedGraph {
     constructor () {
         this.adjacencyList = {};
