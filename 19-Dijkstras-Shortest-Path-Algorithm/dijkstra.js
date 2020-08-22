@@ -15,4 +15,9 @@ class WeightedGraph {
             this.adjacencyList[vertex] = [];
         }
     }
+
+    addEdge (vertex1, vertex2, weight) {
+        this.adjacencyList[vertex1].push(new Node(vertex2, weight));
+        this.adjacencyList[vertex2].push(new Node(vertex1, weight));
+    }
 }
