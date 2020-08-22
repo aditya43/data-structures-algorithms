@@ -1,6 +1,6 @@
 class Node {
     constructor (vertex, weight) {
-        this.vertex = vertex;
+        this.node = vertex;
         this.weight = weight;
     }
 }
@@ -10,8 +10,8 @@ class PriorityQueue {
         this.values = [];
     }
 
-    enqueue (val) {
-        this.values.push(val);
+    enqueue (val, priority) {
+        this.values.push({ val, priority });
         this.sort();
     }
 
@@ -109,4 +109,4 @@ graph.addEdge('D', 'E', 3);
 graph.addEdge('D', 'F', 1);
 graph.addEdge('E', 'F', 1);
 
-console.log(JSON.stringify(graph, null, 4));
+console.log(graph.Dijkstra('A', 'E'));
