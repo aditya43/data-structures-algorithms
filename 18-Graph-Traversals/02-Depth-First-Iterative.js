@@ -25,11 +25,12 @@ class Graph {
         const results = [];
         const visited = {};
         const stack = [start];
+        let currentVertex;
 
         visited[start] = true;
 
         while (stack.length) {
-            const currentVertex = stack.pop();
+            currentVertex = stack.pop();
 
             results.push(currentVertex);
 
