@@ -202,3 +202,4 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ## Dynamic Programming
 - A method for solving a complex problem by breaking it down into a collection of simpler **subproblems**, solving each of those subproblems **just once**, and **storing their solutions**.
+- **When to use Dynamic Programming:** Where there is optimal substructure present and overlapping subproblems.
