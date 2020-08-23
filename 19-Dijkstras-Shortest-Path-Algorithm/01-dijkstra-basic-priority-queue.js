@@ -1,3 +1,37 @@
+/**
+ * Dijkstra's Shortest Path Algorithm
+ * Dijkstra's algorithm is greedy! That can cause problems!
+ *
+ *
+ * Time Complexity: Time Complexity of Dijkstra's Algorithm is O ( V 2 )
+ * but with min-priority queue it drops down to O ( V + E log V )
+ *
+ * @author Aditya Hajare <https://github.com/aditya43>
+ *
+ * IMPORTANT POINTS AND PSUDOCODE
+ * -----------------------------------
+ * 1. This function should accept a starting and ending vertex
+ * 2. Create an object (we'll call it distances) and set each key to be every
+ * vertex in the adjacency list with a value of infinity, except for the
+ * starting vertex which should have a value of 0.
+ * 3. After setting a value in the distances object, add each vertex with
+ * a priority of Infinity to the priority queue, except the starting vertex,
+ * which should have a priority of 0 because that's where we begin.
+ * 4. Create another object called previous and set each key to be every
+ * vertex in the adjacency list with a value of null
+ * 5. Start looping as long as there is anything in the priority queue
+ *    - dequeue a vertex from the priority queue
+ *    - If that vertex is the same as the ending vertex - we are done!
+ *    - Otherwise loop through each value in the adjacency list at that vertex
+ *       - Calculate the distance to that vertex from the starting vertex
+ *       - if the distance is less than what is currently stored in our
+ *         distances object
+ *           - update the distances object with new lower distance
+ *           - update the previous object to contain that vertex
+ *           - enqueue the vertex with the total distance from the start node
+ *
+ * We can improve this algorithm by adding a heuristics (a best guess)
+ */
 class Node {
     constructor (vertex, weight) {
         this.node = vertex;
