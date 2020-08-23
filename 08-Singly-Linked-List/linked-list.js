@@ -166,6 +166,18 @@ class SinglyLinkedList {
         return this;
     }
 
+    /**
+     * 1. Swap the head and tail
+     * 2. Create a variable called next
+     * 3. Create a variable called prev
+     * 4. Create a variable called node and initialize it to the
+     * head property Loop through the list
+     * 5. Set next to be the next property on whatever node is
+     * 6. Set the next property on the node to be whatever prev is
+     * 7. Set prev to be the value of the node variable
+     * 8. Set the node variable to be the value of the next variable
+     * 9. Once you have finished looping, return the list
+     */
     reverseIterative () {
         let node = this.head;
         let prev = null;
