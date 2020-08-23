@@ -208,3 +208,4 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
     * **Merge Sort DOES NOT have overlapping subproblems!** For e.g.:
         - `mergeSort([10, 24, 73 76])`: **DOES NOT have overlapping subproblems!**
         - `mergeSort([10, 24, 10, 24])`: **DOES have overlapping subproblems!**
+- **Optimal Substructure:** A problem is said to have `Optimal Substructure` if an optimal solution can be constructed from optimal solutions of its `subproblems`.
