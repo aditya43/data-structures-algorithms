@@ -198,3 +198,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
         - Depth-first searches are used in mapping routes, scheduling, and finding spanning trees.
     * But these are just rules of thumb; we'll probably need to experiment.
 
+-----------
+
+## Dynamic Programming
+- A method for solving a complex problem by breaking it down into a collection of simpler **subproblems**, solving each of those subproblems **just once**, and **storing their solutions**.
