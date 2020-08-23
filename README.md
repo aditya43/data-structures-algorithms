@@ -203,3 +203,8 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 ## Dynamic Programming
 - A method for solving a complex problem by breaking it down into a collection of simpler **subproblems**, solving each of those subproblems **just once**, and **storing their solutions**.
 - **When to use Dynamic Programming:** Where there is optimal substructure present and overlapping subproblems.
+- **Overlapping Subproblem:** A problem is said to have `overlapping subproblems` if it can be broken down into subproblems which are reused several times.
+    * For e.g. **Fibonacci Sequence:** Every number after the first two is the sum of the two preceding ones.
+    * **Merge Sort DOES NOT have overlapping subproblems!** For e.g.:
+        - `mergeSort([10, 24, 73 76])`: **DOES NOT have overlapping subproblems!**
+        - `mergeSort([10, 24, 10, 24])`: **DOES have overlapping subproblems!**
