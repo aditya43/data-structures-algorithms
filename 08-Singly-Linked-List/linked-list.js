@@ -195,7 +195,7 @@ class SinglyLinkedList {
         return this;
     }
 
-    reverseBetween (start, end) {
+    reverseBetweenUsingStack (start, end) {
         if (start < 0 || end > this.length) {
             return false;
         }
@@ -239,6 +239,39 @@ class SinglyLinkedList {
             current = current.next;
         }
         console.log(arr);
+    }
+
+    reverseBetweenInPlace (start, end) {
+        if (start < 0 || end > this.length) {
+            return false;
+        }
+
+        let node = this.head;
+        let prev = null;
+        let prevNode = null;
+        let next = null;
+
+        for (let i = 0; i <= end; i++) {
+            if (i === start - 1) {
+                prevNode = node;
+            }
+
+            if (i === end) {
+                next = node;
+            }
+
+            if (i >= start && i <= end) {
+                var tmp = node.next;
+                node.next = prev;
+                prev = node;
+                node = tmp;
+            } else {
+                node = node.next;
+            }
+        }
+
+        prevNode.next.next = node;
+        prevNode.next = next;
     }
 }
 
