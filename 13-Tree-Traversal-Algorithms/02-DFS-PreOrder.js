@@ -41,8 +41,7 @@ class BinarySearchTree {
         // Create an array to hold final output data
         const output = [];
 
-        // traverse (node)
-        function traverse (node) {
+        (function traverse (node) {
             // Add node to the output array
             output.push(node.val);
 
@@ -55,10 +54,7 @@ class BinarySearchTree {
             if (node.right) {
                 traverse(node.right);
             }
-        }
-
-        // Call traverse() on this.root
-        traverse(this.root);
+        })(this.root); // Call traverse() on this.root
 
         // Return output array
         return output;
