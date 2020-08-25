@@ -254,3 +254,86 @@ graph.addEdge('D', 'F', 1);
 graph.addEdge('E', 'F', 1);
 
 console.log(graph.Dijkstra('A', 'E'));
+
+/**
+ * Adjacency List:
+ *
+ * {
+ *    "A": [
+ *        {
+ *            "node": "B",
+ *            "weight": 4
+ *        },
+ *        {
+ *            "node": "C",
+ *            "weight": 2
+ *        }
+ *    ],
+ *    "B": [
+ *        {
+ *            "node": "A",
+ *            "weight": 4
+ *        },
+ *        {
+ *            "node": "E",
+ *            "weight": 3
+ *        }
+ *    ],
+ *    "C": [
+ *        {
+ *            "node": "A",
+ *            "weight": 2
+ *        },
+ *        {
+ *            "node": "D",
+ *            "weight": 2
+ *        },
+ *        {
+ *            "node": "F",
+ *            "weight": 4
+ *        }
+ *    ],
+ *    "D": [
+ *        {
+ *            "node": "C",
+ *            "weight": 2
+ *        },
+ *        {
+ *            "node": "E",
+ *            "weight": 3
+ *        },
+ *        {
+ *            "node": "F",
+ *            "weight": 1
+ *        }
+ *    ],
+ *    "E": [
+ *        {
+ *            "node": "B",
+ *            "weight": 3
+ *        },
+ *        {
+ *            "node": "D",
+ *            "weight": 3
+ *        },
+ *        {
+ *            "node": "F",
+ *            "weight": 1
+ *        }
+ *    ],
+ *    "F": [
+ *        {
+ *            "node": "C",
+ *            "weight": 4
+ *        },
+ *        {
+ *            "node": "D",
+ *            "weight": 1
+ *        },
+ *        {
+ *            "node": "E",
+ *            "weight": 1
+ *        }
+ *    ]
+ * }
+ */
