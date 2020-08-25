@@ -40,7 +40,7 @@ class BinarySearchTree {
     depthFirstSearchPostOrder () {
         const output = [];
 
-        function traverse (node) {
+        (function traverse (node) {
             if (node.left) {
                 traverse(node.left);
             }
@@ -50,9 +50,7 @@ class BinarySearchTree {
             }
 
             output.push(node.val);
-        }
-
-        traverse(this.root);
+        })(this.root);
 
         return output;
     }
