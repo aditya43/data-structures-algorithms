@@ -1,8 +1,5 @@
 /**
- * Bubble Sort
- *
- * Time Complexity: O(n^2)
- * Space Complexity: O(1)
+ * DFS Recursive
  *
  * @author Aditya Hajare <https://github.com/aditya43>
  *
