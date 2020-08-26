@@ -1,3 +1,23 @@
+/**
+ * DFS Iterative
+ *
+ * @author Aditya Hajare <https://github.com/aditya43>
+ *
+ * Algorithm
+ * -----------------------------------
+ * 1. The function should accept a starting node
+ * 2. Create a stack to help use keep track of vertices (use a list/array)
+ * 3. Create a list to store the end result, to be returned at the very end
+ * 4. Create an object to store visited vertices
+ * 5. Add the starting vertex to the stack, and mark it visited
+ * 6. While the stack has something in it:
+ *      - Pop the next vertex from the stack
+ *      - If that vertex hasn't been visited yet:
+ *          - Mark it as visited
+ *          - Add it to the result list
+ *          - Push all of its neighbors into the stack
+ * 7. Return the result array
+ */
 class Graph {
     constructor () {
         this.adjacencyList = [];
