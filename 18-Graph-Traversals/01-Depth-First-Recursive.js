@@ -1,3 +1,39 @@
+/**
+ * Bubble Sort
+ *
+ * Time Complexity: O(n^2)
+ * Space Complexity: O(1)
+ *
+ * @author Aditya Hajare <https://github.com/aditya43>
+ *
+ * PSUDOCODE
+ * -----------------------------------
+ * DFS-iterative(start):
+ *   let S be a stack
+ *   S.push(start)
+ *   while S is not empty
+ *       vertex = S.pop()
+ *       if vertex is not labeled as discovered:
+ *           visit vertex (add to result list)
+ *           label vertex as discovered
+ *           for each of vertex's neighbors, N do
+ *               S.push(N)
+ *
+ * Algorithm
+ * -----------------------------------
+ * 1. The function should accept a starting node
+ * 2. Create a list to store the end result, to be returned at the very end
+ * 3. Create an object to store visited vertices
+ * 4. Create a helper function which accepts a vertex
+ *      - The helper function should return early if the vertex is empty
+ *      - The helper function should place the vertex it accepts
+ *        into the visited object and push that vertex into the result array
+ *      - Loop over all of the values in the adjacencyList for that vertex
+ *      - If any of those values have not been visited, recursively
+ *        invoke the helper function with that vertex
+ * 5. Invoke the helper function with the starting vertex
+ * 6. Return the result array
+ */
 class Graph {
     constructor () {
         this.adjacencyList = [];
