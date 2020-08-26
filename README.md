@@ -211,7 +211,7 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 - **Pre Order:**
     * If you know you need to explore the roots before inspecting any leaves, you pick **pre-order** because you will encounter all the roots before all of the leaves.
     * Used to create a copy of a tree. For example, if you want to create a replica of a tree, put the nodes in an array with a pre-order traversal. Then perform an Insert operation on a new tree for each value in the array. You will end up with a copy of your original tree.
-    * If I wanted to simply print out the hierarchical format of the tree in a linear format, I'd probably use preorder traversal.
+    * If I wanted to simply print out the hierarchical format of the tree in a linear format, I'd probably use preorder traversal. Or in a `TreeView` component in a GUI application.
     ```
     - ROOT
         - A
