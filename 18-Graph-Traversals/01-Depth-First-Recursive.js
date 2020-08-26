@@ -33,7 +33,7 @@
  */
 class Graph {
     constructor () {
-        this.adjacencyList = [];
+        this.adjacencyList = {};
     }
 
     addVertex (vertex) {
