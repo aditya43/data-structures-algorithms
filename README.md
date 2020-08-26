@@ -200,6 +200,31 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 -----------
 
+## When to use Pre-Order, In-order or Post-Order?
+- The traversal strategy the programmer selects depends on the specific needs of the algorithm being designed. The goal is speed, so pick the strategy that brings you the nodes you require the fastest.
+- **In Order:**
+    * If you know that the tree has an inherent sequence in the nodes, and you want to flatten the tree back into its original sequence, than an **in-order** traversal should be used. The tree would be flattened in the same way it was created. A pre-order or post-order traversal might not unwind the tree back into the sequence which was used to create it.
+    * Used to get the values of the nodes in non-decreasing order in a BST.
+- **Post Order:**
+    * If you know you need to explore all the leaves before any nodes, you select **post-order** because you don't waste any time inspecting roots in search for leaves.
+    * Used to delete a tree from leaf to root
+- **Pre Order:**
+    * If you know you need to explore the roots before inspecting any leaves, you pick **pre-order** because you will encounter all the roots before all of the leaves.
+    * Used to create a copy of a tree. For example, if you want to create a replica of a tree, put the nodes in an array with a pre-order traversal. Then perform an Insert operation on a new tree for each value in the array. You will end up with a copy of your original tree.
+    * If I wanted to simply print out the hierarchical format of the tree in a linear format, I'd probably use preorder traversal.
+    ```
+    - ROOT
+        - A
+            - B
+            - C
+        - D
+            - E
+            - F
+                - G
+    ```
+
+-----------
+
 ## Dynamic Programming
 - A method for solving a complex problem by breaking it down into a collection of simpler **subproblems**, solving each of those subproblems **just once**, and **storing their solutions**.
 - **When to use Dynamic Programming:** Where there is optimal substructure present and overlapping subproblems.
