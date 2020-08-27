@@ -4,7 +4,7 @@
  *
  * @author Aditya Hajare <https://github.com/aditya43>
  *
- * @param triangles 2D Space coordinates
+ * @param triangles Array of triangle coordinates in 2D Space (x, y)
  */
 
 function getVisibleMountains (triangles) {
