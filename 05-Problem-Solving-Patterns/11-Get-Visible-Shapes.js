@@ -29,11 +29,13 @@ function getVisibleMountains (triangles) {
         }
     }
 
-    console.log(visible);
+    return visible;
 }
 
-getVisibleMountains([
+const visible = getVisibleMountains([
     [4, 6],
     [7, 2],
     [2, 5]
 ]);
+
+console.log(visible);
