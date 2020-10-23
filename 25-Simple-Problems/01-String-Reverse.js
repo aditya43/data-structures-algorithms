@@ -12,4 +12,10 @@ function solutionTwo(str) {
     return res;
 }
 
+function solutionThree(str) {
+    return str.split('').reduce((rev, chr) => chr + rev, '');
+}
+
 console.log(solutionOne('aditya'));
+console.log(solutionTwo('aditya'));
+console.log(solutionThree('aditya'));
