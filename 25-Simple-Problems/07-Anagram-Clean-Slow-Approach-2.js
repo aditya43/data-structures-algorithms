@@ -10,7 +10,13 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(str1, str2) {}
+function anagrams(str1, str2) {
+    return cleanStr(str1) === cleanStr(str2);
+}
+
+function cleanStr(str) {
+    return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
 
 console.log(anagrams('rail safety', 'fairy tales')); // True;
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True;
