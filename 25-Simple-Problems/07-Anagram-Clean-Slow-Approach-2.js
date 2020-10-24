@@ -21,3 +21,4 @@ function cleanStr(str) {
 console.log(anagrams('rail safety', 'fairy tales')); // True;
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True;
 console.log(anagrams('Hi there', 'Bye there')); // False;
+console.log(anagrams('आदित्य हजारे', ' दित्य जा आ रेह')); // True;
