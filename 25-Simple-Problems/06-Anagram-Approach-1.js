@@ -10,7 +10,22 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(str1, str2) {}
+function anagrams(str1, str2) {
+    const str1CharMap = buildFrequencyCounter(str1);
+    const str2CharMap = buildFrequencyCounter(str2);
+
+    if (Object.keys(str1CharMap).length !== Object.keys(str2CharMap).length) {
+        return false;
+    }
+
+    for (let char in str1CharMap) {
+        if (str1CharMap[char] !== str2CharMap[char]) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 function buildFrequencyCounter(str) {
     const charMap = {};
@@ -25,33 +40,3 @@ function buildFrequencyCounter(str) {
 console.log(anagrams('rail safety', 'fairy tales')); // True;
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True;
 console.log(anagrams('Hi there', 'Bye there')); // False;
-
-// function anagrams(str1, str2) {
-//     // If strings are not equal, return false.
-//     if (str1.length !== str2.length) {
-//         return false;
-//     }
-
-//     // Maintain a frequency lookup object.
-//     const freq = {};
-
-//     // Calculate occurances for each letter in string 1.
-//     for (const val of str1) {
-//         freq[val] = (freq[val] || 0) + 1;
-//     }
-
-//     for (const val of str2) {
-//         // From str2, if the character is not occured once in frequency, return false.
-//         if (!freq[val] > 0) {
-//             return false;
-//         }
-
-//         // For the character in str2, decrement occurance frequency by 1.
-//         if (freq[val] > 0) {
-//             freq[val] -= 1;
-//         }
-//     }
-
-//     // String is anagram!
-//     return true;
-// }
