@@ -22,7 +22,7 @@ function steps(n, row = 0, stair = '') {
         return;
     }
 
-    if (n === stair.length) {
+    if (stair.length === n) {
         console.log(stair);
         return steps(n, row + 1);
     }
