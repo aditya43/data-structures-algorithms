@@ -10,6 +10,18 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+function anagrams(str1, str2) {}
+
+function buildFrequencyCounter(str) {
+    const charMap = {};
+
+    for (const char of str.replace(/[^\w]/g, '').toLowerCase()) {
+        charMap[char] = charMap[char] + 1 || 1;
+    }
+
+    return charMap;
+}
+
 console.log(anagrams('rail safety', 'fairy tales')); // True;
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); // True;
 console.log(anagrams('Hi there', 'Bye there')); // False;
