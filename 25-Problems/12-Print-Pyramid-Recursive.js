@@ -27,11 +27,11 @@ function pyramid(n, row = 0, level = '') {
     const midpoint = Math.floor((2 * n - 1) / 2);
     let add;
     if (level.length >= midpoint - row && level.length <= midpoint + row) {
-        add = '#';
+        level += '#';
     } else {
-        add = ' ';
+        level += ' ';
     }
-    pyramid(n, row, level + add);
+    pyramid(n, row, level);
 }
 
 pyramid(10);
