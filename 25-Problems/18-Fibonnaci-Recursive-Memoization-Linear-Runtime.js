@@ -17,4 +17,4 @@ function fib(n, res = [0, 1, 1]) {
     return res[n];
 }
 
-console.log(fib(155));
+console.log(fib(50));
