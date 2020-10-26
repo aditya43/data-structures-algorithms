@@ -42,14 +42,38 @@ class Stack {
     }
 }
 
-const st = new Stack();
-st.push(1);
-st.push(2);
-st.push(3);
-st.push(4);
+class Queue {
+    constructor() {
+        this.stack = new Stack();
+    }
 
-console.log(st.pop());
-console.log(st.pop());
-console.log(st.pop());
-console.log(st.pop());
-console.log(st.pop());
+    enqueue(val) {
+        this.stack.push(val);
+        return this;
+    }
+
+    dequeue() {
+        const tempStack = new Stack();
+
+        while (this.stack.peek()) {
+            tempStack.push(this.stack.pop().val);
+        }
+
+        const node = tempStack.pop();
+
+        while (tempStack.peek()) {
+            this.stack.push(tempStack.pop().val);
+        }
+
+        return node;
+    }
+}
+
+const q = new Queue();
+q.enqueue(1).enqueue(2).enqueue(3).enqueue(4);
+
+console.log(q.dequeue());
+console.log(q.dequeue());
+console.log(q.dequeue());
+console.log(q.dequeue());
+console.log(q.dequeue());
