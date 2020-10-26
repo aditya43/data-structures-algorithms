@@ -62,3 +62,6 @@ class Queue {
 
 const q1 = new Queue();
 q1.enqueue(1).enqueue(2).enqueue(3).enqueue(4).enqueue(5);
+
+const q2 = new Queue();
+q2.enqueue('A').enqueue('B').enqueue('C').enqueue('D').enqueue('E');
