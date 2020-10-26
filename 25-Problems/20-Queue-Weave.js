@@ -29,4 +29,10 @@ class Queue {
         this.head = null;
         this.tail = null;
     }
+
+    enqueue(val) {
+        const node = new Node(val);
+        node.next = this.head.next;
+        this.head = node;
+    }
 }
