@@ -58,6 +58,42 @@ class Queue {
     peek() {
         return this.head;
     }
+
+    print() {
+        let res = '';
+        let current = this.head;
+
+        while (current) {
+            res += current.val;
+
+            if (current.next) {
+                res += ' -> ';
+            }
+
+            current = current.next;
+        }
+
+        return res;
+    }
+}
+
+function weave(q1, q2) {
+    if (!q1.peek() && !q2.peek()) {
+        return false;
+    }
+
+    const q3 = new Queue();
+
+    while (q1.peek() || q2.peek()) {
+        if (q1.peek()) {
+            q3.enqueue(q1.dequeue().val);
+        }
+        if (q2.peek()) {
+            q3.enqueue(q2.dequeue().val);
+        }
+    }
+
+    return q3;
 }
 
 const q1 = new Queue();
@@ -65,3 +101,6 @@ q1.enqueue(1).enqueue(2).enqueue(3).enqueue(4).enqueue(5);
 
 const q2 = new Queue();
 q2.enqueue('A').enqueue('B').enqueue('C').enqueue('D').enqueue('E');
+
+const q3 = weave(q1, q2);
+console.log(q3.print());
