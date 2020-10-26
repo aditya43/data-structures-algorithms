@@ -38,12 +38,20 @@ class Queue {
             return this;
         }
 
-        node.next = this.head.next;
-        this.head = node;
+        this.tail.next = node;
+        this.tail = node;
         return this;
     }
 
     dequeue() {
-        const node
+        const node = this.head;
+
+        if (!node.next) {
+            this.head = this.tail = null;
+        } else {
+            this.head = node.next;
+        }
+
+        return node;
     }
 }
