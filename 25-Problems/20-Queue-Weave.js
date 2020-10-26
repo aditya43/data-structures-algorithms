@@ -32,7 +32,18 @@ class Queue {
 
     enqueue(val) {
         const node = new Node(val);
+
+        if (!this.head) {
+            this.head = this.tail = node;
+            return this;
+        }
+
         node.next = this.head.next;
         this.head = node;
+        return this;
+    }
+
+    dequeue() {
+        const node
     }
 }
