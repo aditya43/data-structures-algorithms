@@ -46,7 +46,7 @@ class Queue {
     dequeue() {
         const node = this.head;
 
-        if (!node.next) {
+        if (!node || !node.next) {
             this.head = this.tail = null;
         } else {
             this.head = node.next;
@@ -55,3 +55,6 @@ class Queue {
         return node;
     }
 }
+
+const q1 = new Queue();
+q1.enqueue(1).enqueue(2).enqueue(3).enqueue(4).enqueue(5);
