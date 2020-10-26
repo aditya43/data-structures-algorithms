@@ -54,6 +54,10 @@ class Queue {
 
         return node;
     }
+
+    peek() {
+        return this.head;
+    }
 }
 
 const q1 = new Queue();
