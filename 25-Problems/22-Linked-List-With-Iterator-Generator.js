@@ -36,13 +36,20 @@ class LinkedList {
 
         return node;
     }
+
+    *[Symbol.iterator]() {
+        let node = this.head;
+
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+    }
 }
 
 const ll = new LinkedList();
 ll.add(1).add(2).add(3).add(4);
 
-console.log(ll.remove());
-console.log(ll.remove());
-console.log(ll.remove());
-console.log(ll.remove());
-console.log(ll.remove());
+for (let node of ll) {
+    console.log(node);
+}
