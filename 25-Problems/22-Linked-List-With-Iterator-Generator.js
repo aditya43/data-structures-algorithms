@@ -3,7 +3,7 @@
 class Node {
     constructor(val) {
         this.val = val;
-        this.next = nulll;
+        this.next = null;
     }
 }
 
@@ -28,7 +28,7 @@ class LinkedList {
     remove() {
         const node = this.head;
 
-        if (!this.head.next) {
+        if (!this.head || !this.head.next) {
             this.head = this.tail = null;
         } else {
             this.head = this.head.next;
@@ -37,3 +37,12 @@ class LinkedList {
         return node;
     }
 }
+
+const ll = new LinkedList();
+ll.add(1).add(2).add(3).add(4);
+
+console.log(ll.remove());
+console.log(ll.remove());
+console.log(ll.remove());
+console.log(ll.remove());
+console.log(ll.remove());
