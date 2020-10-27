@@ -24,4 +24,16 @@ class LinkedList {
         this.tail = node;
         return this;
     }
+
+    remove() {
+        const node = this.head;
+
+        if (!this.head.next) {
+            this.head = this.tail = null;
+        } else {
+            this.head = this.head.next;
+        }
+
+        return node;
+    }
 }
