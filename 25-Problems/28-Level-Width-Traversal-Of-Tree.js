@@ -11,8 +11,6 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-function levelWidth(root) {}
-
 class Node {
     constructor(data) {
         this.data = data;
@@ -22,6 +20,25 @@ class Node {
     add(data) {
         this.children.push(new Node(data));
     }
+}
+
+function levelWidth(root) {
+    const arr = [root, 'stop'];
+    const nodesAtEachLevel = [0];
+
+    while (arr.length > 1) {
+        const node = arr.shift();
+
+        if (node === 'stop') {
+            nodesAtEachLevel.push(0);
+            arr.push('stop');
+        } else {
+            arr.push(...node.children);
+            nodesAtEachLevel[nodesAtEachLevel.length - 1]++;
+        }
+    }
+
+    return nodesAtEachLevel;
 }
 
 const root1 = new Node(0);
