@@ -52,3 +52,14 @@ class Tree {
         }
     }
 }
+
+const t = new Tree();
+t.root = new Node('a');
+t.root.add('b');
+t.root.add('d');
+t.root.children[0].add('c');
+
+t.traverseDF((node) => {
+    // letters.push(node.data);
+    console.log(node.data);
+});
