@@ -63,3 +63,10 @@ t.traverseDF((node) => {
     // letters.push(node.data);
     console.log(node.data);
 });
+
+console.log('-----------------');
+
+t.traverseBF((node) => {
+    // letters.push(node.data);
+    console.log(node.data);
+});
