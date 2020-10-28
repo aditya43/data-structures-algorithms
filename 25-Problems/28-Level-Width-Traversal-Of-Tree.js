@@ -24,21 +24,21 @@ class Node {
 
 function levelWidth(root) {
     const arr = [root, 'stop'];
-    const nodesAtEachLevel = [0];
+    const widths = [0];
 
     while (arr.length > 1) {
         const node = arr.shift();
 
         if (node === 'stop') {
-            nodesAtEachLevel.push(0);
+            widths.push(0);
             arr.push('stop');
         } else {
             arr.push(...node.children);
-            nodesAtEachLevel[nodesAtEachLevel.length - 1]++;
+            widths[widths.length - 1]++;
         }
     }
 
-    return nodesAtEachLevel;
+    return widths;
 }
 
 const root1 = new Node(0);
