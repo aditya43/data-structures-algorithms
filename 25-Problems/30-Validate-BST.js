@@ -25,6 +25,8 @@ class Node {
     }
 }
 
+function validate(root) {}
+
 const root1 = new Node(10);
 root1.insert(5);
 root1.insert(15);
