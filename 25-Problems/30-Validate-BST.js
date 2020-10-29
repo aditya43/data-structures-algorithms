@@ -24,3 +24,19 @@ class Node {
         }
     }
 }
+
+const root1 = new Node(10);
+root1.insert(5);
+root1.insert(15);
+root1.insert(0);
+root1.insert(20);
+
+const root2 = new Node(10);
+root2.insert(5);
+root2.insert(15);
+root2.insert(0);
+root2.insert(20);
+root2.left.left.right = new Node(999);
+
+console.log(validate(root1)); // true
+console.log(validate(root2)); // true
