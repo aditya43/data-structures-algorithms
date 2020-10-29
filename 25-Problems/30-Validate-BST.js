@@ -25,7 +25,25 @@ class Node {
     }
 }
 
-function validate(root) {}
+function validate(node, min = null, max = null) {
+    if (max !== null && node.data > max) {
+        return false;
+    }
+
+    if (min !== null && node.data < min) {
+        return false;
+    }
+
+    if (node.left && !validate(node.left, min, node.data)) {
+        return false;
+    }
+
+    if (node.right && !validate(node.right, node.data, max)) {
+        return false;
+    }
+
+    return true;
+}
 
 const root1 = new Node(10);
 root1.insert(5);
@@ -41,4 +59,4 @@ root2.insert(20);
 root2.left.left.right = new Node(999);
 
 console.log(validate(root1)); // true
-console.log(validate(root2)); // true
+console.log(validate(root2)); // false
