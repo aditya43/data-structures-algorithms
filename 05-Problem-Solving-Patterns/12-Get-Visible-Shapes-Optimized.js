@@ -17,9 +17,9 @@ function getVisibleMountains(triangles) {
         };
     }
 
-    for (const i in triangles) {
-        const left = triangles[i][0] - triangles[i][1];
-        const right = triangles[i][0] + triangles[i][1];
+    for (const [i, triangle] of triangles) {
+        const left = triangle[0] - triangle[1];
+        const right = triangle[0] + triangle[1];
 
         for (const j in triangles) {
             if (i === j) {
