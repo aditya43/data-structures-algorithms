@@ -26,11 +26,7 @@ function getVisibleMountains(triangles) {
                 continue;
             }
 
-            if (
-                lookupTable[j] &&
-                left >= lookupTable[j].X1 &&
-                right <= lookupTable[j].X2
-            ) {
+            if (lookupTable[j] && left >= lookupTable[j].X1 && right <= lookupTable[j].X2) {
                 delete lookupTable[i];
                 break;
             }
