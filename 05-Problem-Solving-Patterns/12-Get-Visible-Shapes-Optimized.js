@@ -7,13 +7,13 @@
  * @param triangles Array of triangle coordinates in 2D Space (x, y)
  */
 
-function getVisibleMountains (triangles) {
+function getVisibleMountains(triangles) {
     const lookupTable = {};
 
-    for (const i in triangles) {
+    for (const [i, triangle] of triangles) {
         lookupTable[i] = {
-            X1: triangles[i][0] - triangles[i][1],
-            X2: triangles[i][0] + triangles[i][1]
+            X1: triangle[0] - triangle[1],
+            X2: triangle[0] + triangle[1],
         };
     }
 
@@ -26,7 +26,11 @@ function getVisibleMountains (triangles) {
                 continue;
             }
 
-            if (lookupTable[j] && left >= lookupTable[j].X1 && right <= lookupTable[j].X2) {
+            if (
+                lookupTable[j] &&
+                left >= lookupTable[j].X1 &&
+                right <= lookupTable[j].X2
+            ) {
                 delete lookupTable[i];
                 break;
             }
@@ -41,7 +45,7 @@ const visible = getVisibleMountains([
     [7, 2],
     [7, 2],
     [2, 5],
-    [2, 5]
+    [2, 5],
 ]);
 
 console.log(visible);
