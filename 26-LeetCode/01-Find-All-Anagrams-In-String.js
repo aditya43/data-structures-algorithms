@@ -29,3 +29,48 @@ The substring with start index = 0 is "ab", which is an anagram of "ab".
 The substring with start index = 1 is "ba", which is an anagram of "ab".
 The substring with start index = 2 is "ab", which is an anagram of "ab".
 */
+
+/**
+ * @param {string} s
+ * @param {string} p
+ * @return {number[]}
+ */
+var findAnagrams = function (s, p) {
+    const res = [];
+    const needleFreq = buildFrequencyObj(p);
+
+    for (const i in s) {
+        const chunk = s.slice(i, +i + p.length);
+
+        if (chunk.length !== p.length) {
+            break;
+        }
+
+        const chunkFreq = buildFrequencyObj(chunk);
+
+        for (const char in chunkFreq) {
+            if (chunkFreq[char] === needleFreq[char]) {
+                delete chunkFreq[char];
+            }
+        }
+
+        if (Object.keys(chunkFreq).length === 0) {
+            res.push(i);
+        }
+    }
+
+    return res;
+};
+
+const buildFrequencyObj = (str) => {
+    const freq = {};
+
+    for (const char of str) {
+        freq[char] = freq[char] + 1 || 1;
+    }
+
+    return freq;
+};
+
+console.log(findAnagrams('abab', 'ab'));
+console.log(findAnagrams('cbaebabacd', 'abc'));
