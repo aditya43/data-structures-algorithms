@@ -1,5 +1,5 @@
 class Node {
-    constructor (val) {
+    constructor(val) {
         this.val = val;
         this.next = null;
         this.prev = null;
@@ -7,13 +7,13 @@ class Node {
 }
 
 class DoublyLinkedList {
-    constructor () {
+    constructor() {
         this.length = 0;
         this.head = null;
         this.tail = null;
     }
 
-    push (val) {
+    push(val) {
         const node = new Node(val);
         if (this.head === null) {
             this.head = this.tail = node;
@@ -27,7 +27,7 @@ class DoublyLinkedList {
         return this;
     }
 
-    pop () {
+    pop() {
         if (this.head === null) {
             return false;
         }
@@ -49,7 +49,7 @@ class DoublyLinkedList {
         return node;
     }
 
-    shift () {
+    shift() {
         if (!this.head) {
             return false;
         }
@@ -70,7 +70,7 @@ class DoublyLinkedList {
         return node;
     }
 
-    unshift (val) {
+    unshift(val) {
         const node = new Node(val);
 
         if (this.length === 0) {
@@ -88,7 +88,7 @@ class DoublyLinkedList {
         return this.head;
     }
 
-    get (index) {
+    get(index) {
         if (index < 0 || index > this.length || this.length === 0) {
             return false;
         }
@@ -116,7 +116,7 @@ class DoublyLinkedList {
         return current;
     }
 
-    set (index, val) {
+    set(index, val) {
         const node = this.get(index);
 
         if (node) {
@@ -127,7 +127,7 @@ class DoublyLinkedList {
         return false;
     }
 
-    insert (index, val) {
+    insert(index, val) {
         if (index < 0 || index > this.length) {
             return false;
         }
@@ -153,7 +153,7 @@ class DoublyLinkedList {
         return true;
     }
 
-    remove (index) {
+    remove(index) {
         if (this.length === 0 || index < 0 || index > this.length) {
             return false;
         }
@@ -195,7 +195,7 @@ class DoublyLinkedList {
         return node;
     }
 
-    print () {
+    print() {
         const arr = [];
         let current = this.head;
 
