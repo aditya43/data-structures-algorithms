@@ -246,5 +246,3 @@ Open-sourced software licensed under the [MIT license](http://opensource.org/lic
 
 ## Dynamic Programming - Memoization
 - Storing the results of expensive function calls and returning the cached result when the same input occur again.
-
------------
